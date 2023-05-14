@@ -1,0 +1,35 @@
+<div class="container text-bg-success p-3 rounded">
+        <h3 class="text-center text-decoration-underline">Your notes</h3>
+        <a href="/notes/add" class="btn btn-primary"><i class="bi bi-file-earmark-plus-fill"></i></a>
+    <hr>
+
+    <div class="row gap-2 row-cols-3 justify-content-center">
+        {{#each Notes}}
+        <div class="col-md-4 text-bg-danger card mt-2">
+            <div class="card-body">
+                <div>
+                    <a href="/notes/edit/{{_id}}" class="link-light position-absolute top-1 start-1"> <i
+                            class="bi bi-pencil-fill"></i></a>
+
+                    {{!-- <a href="/notes/delete/{{_id}}" class="link-light position-absolute top-1 start-100  "><i
+                            class="bi bi-trash-fill"></i></a> --}}
+                </div>
+
+                <h5 class="card-title text-center text-decoration-underline"> {{title}} </h5>
+                <hr>
+
+                <p class="card-text ts-6 fw-light p-3">{{description}} </p>
+                <hr>
+
+                <h6 class="card-text ts-6 fw-light"><i class="bi bi-clock-fill"></i>
+                    {{createdAt}}.</h6>
+
+                <form action="/notes/delete/{{_id}}?_method=delete" method="post" class="d-grid ">
+                    <input type="hidden" name="_method" value="delete">
+                    <button type="submit" class="btn btn-primary">Delete <i class="bi bi-trash"></i></button>
+                </form>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

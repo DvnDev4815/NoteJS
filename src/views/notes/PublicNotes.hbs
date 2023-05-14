@@ -1,0 +1,22 @@
+<div class="container text-bg-success p-3 rounded">
+    <h3 class="text-center text-decoration-underline">Public notes</h3>
+    <a href="/notes/add" class="btn btn-primary"><i class="bi bi-file-earmark-plus-fill"></i></a>
+    <hr>
+
+    <div class="row gap-2 row-cols-3 justify-content-center">
+        {{#each Notes}}
+        <div class="col-md-4 text-bg-danger card mt-2">
+            <div class="card-body">
+                <h5 class="card-title text-center text-decoration-underline"> {{title}} </h5>
+                <hr>
+
+                <p class="card-text ts-6 fw-light p-3">{{description}} </p>
+                <hr>
+
+                <h6 class="card-text ts-6 fw-light"><i class="bi bi-clock-fill"></i>
+                    {{createdAt}}.</h6>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

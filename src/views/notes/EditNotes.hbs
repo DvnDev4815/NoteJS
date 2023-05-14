@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-7 text-bg-danger p-3 rounded text-center">
+            <h4>Editing a note</h4><hr>
+            <form action="/notes/editingNote/{{NoteId._id}}?_method=put" method="post">
+                <input type="hidden" name="_method" value="put">
+                <div class="mb-3">
+                    <label for="NameNote" class="form-label" autofocus>Name note:</label>
+                    <input type="text" class="form-control"  name="NameNote" placeholder="Insert name note" maxlength="20" value="{{NoteId.title}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="NoteInfo" class="form-label">Text to update:</label>
+                    <textarea name="NoteInfo" class="form-control" rows="3" placeholder="Insert text" maxlength="50"> {{NoteId.description}} </textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="public">Public:</label>
+                    <input type="checkbox" name="public">
+                </div>
+
+                <div class="d-grid gap-2">
+                    <input type="submit" value="Save" class="btn btn-primary">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

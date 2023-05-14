@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-7 text-bg-success p-3 rounded text-center">
+            <h4>Add a note</h4>
+            <hr>
+            <form action="/notes/addingNote" method="post">
+                <div class="mb-3">
+                    <label for="NameNote" class="form-label" autofocus>Name note:</label>
+                    <input type="text" class="form-control" name="NameNote" placeholder="Insert name note"
+                        maxlength="20">
+                </div>
+
+                <div class="mb-3">
+                    <label for="NoteInfo" class="form-label">Text to save:</label>
+                    <textarea name="NoteInfo" class="form-control" rows="3" placeholder="Insert text"
+                        maxlength="50"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="public">Public:</label>
+                    <input type="checkbox" name="public">
+                </div>
+
+                <div class="d-grid gap-2">
+                    <input type="submit" value="Create" class="btn btn-danger">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

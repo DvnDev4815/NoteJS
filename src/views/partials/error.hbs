@@ -1,0 +1,13 @@
+{{#if error}}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <p><i class="bi bi-x-lg"></i> {{error}} </p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{{/if}}
+
+{{#each Arg_errors}}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <p><i class="bi bi-exclamation-diamond-fill"></i> {{text}} </p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{{/each}}
